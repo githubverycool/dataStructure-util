@@ -5,18 +5,18 @@ import org.junit.Test;
 
 public class QueueTest {
 	
-	private Queue queue;
+	private Queue<String> queue;
 
 	@Before
 	public void setUp() throws Exception {
-		queue=new Queue(10);
-		queue.add(1);
-		queue.add(2);
-		queue.add(3);
-		queue.add(4);
+		queue=new Queue<String>(10);
+		queue.add("123");
+		queue.add("...");
+		queue.add("456");
+		queue.add("...");
 		queue.remove();
 		queue.remove();
-		queue.add(5);
+		queue.add("789");
 	}
 
 
@@ -25,6 +25,7 @@ public class QueueTest {
 	public void testElement() {
 		while(!queue.isEmpty()){
 			System.out.println(queue.remove());
+			System.out.println(queue.element());
 		}
 	}
 
